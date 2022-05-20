@@ -8,6 +8,7 @@ public class Test {
 		System.out.println("다들 안뇽");
 		System.out.println();
 		System.out.println(" ");
+		System.out.println("이거 너무 좀 그래..... 순서가......");
 	}
 
 }

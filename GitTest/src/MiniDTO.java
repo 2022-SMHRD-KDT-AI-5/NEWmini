@@ -72,7 +72,7 @@ public class MiniDTO {
 }
 
 class Game extends MiniDTO{
-
+asd
 	public Game(String kor, String eng) {
 		super(kor, eng);
 		// TODO Auto-generated constructor stub

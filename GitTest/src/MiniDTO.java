@@ -1,9 +1,8 @@
 
 public class MiniDTO {
-	private String id,name,pw,eng,kor;
+	private String id,name,pw;
 	
 	
-
 	public MiniDTO(String name, String id, String pw) {
 		this.name = name;
 		this.id = id;
@@ -47,30 +46,11 @@ public class MiniDTO {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	public String getEng() {
-		return eng;
-	}
 	
-	
-	
-	public void setEng(String eng) {
-		this.eng = eng;
-	}
-	
-	
-	
-	public String getKor() {
-		return kor;
-	}
-	
-	
-	
-	public void setKor(String kor) {
-		this.kor = kor;
-	}
 	
 }
 
+<<<<<<< HEAD
 class Game extends MiniDTO{
 	
 	public Game(String kor, String eng) {
@@ -78,3 +58,6 @@ class Game extends MiniDTO{
 	}
 	
 }
+=======
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-5/NEWmini.git

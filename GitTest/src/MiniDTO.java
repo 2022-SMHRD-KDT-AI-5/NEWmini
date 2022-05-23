@@ -1,13 +1,15 @@
 
 public class MiniDTO {
-	private String id,name,pw;
+	private String id,name,pw,eng,kor;
 	
 	
+
 	public MiniDTO(String name, String id, String pw) {
 		this.name = name;
 		this.id = id;
 		this.pw = pw;
 	}
+	
 	public MiniDTO(String id, String pw) {
 		this.id = id;
 		this.pw=pw;
@@ -45,6 +47,26 @@ public class MiniDTO {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
+	public String getEng() {
+		return eng;
+	}
 	
+	
+	
+	public void setEng(String eng) {
+		this.eng = eng;
+	}
+	
+	
+	
+	public String getKor() {
+		return kor;
+	}
+	
+	
+	
+	public void setKor(String kor) {
+		this.kor = kor;
+	}
 	
 }

@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ArryMini {
-
+	
 	public static void main(String[] args) {
 		
 		ArrayList<Answer> list = new ArrayList<Answer>();

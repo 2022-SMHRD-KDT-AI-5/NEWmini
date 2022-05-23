@@ -1,9 +1,8 @@
 
 public class MiniDTO {
-	private String id,name,pw,eng,kor;
+	private String id,name,pw;
 	
 	
-
 	public MiniDTO(String name, String id, String pw) {
 		this.name = name;
 		this.id = id;
@@ -47,35 +46,8 @@ public class MiniDTO {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	public String getEng() {
-		return eng;
-	}
 	
-	
-	
-	public void setEng(String eng) {
-		this.eng = eng;
-	}
-	
-	
-	
-	public String getKor() {
-		return kor;
-	}
-	
-	
-	
-	public void setKor(String kor) {
-		this.kor = kor;
-	}
 	
 }
 
-class Game extends MiniDTO{
-asd
-	public Game(String kor, String eng) {
-		super(kor, eng);
-		// TODO Auto-generated constructor stub
-	}
-	
-}
+

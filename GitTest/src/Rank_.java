@@ -85,21 +85,23 @@ public class Rank_ extends ArryMini{
 			System.out.println(listhard.get(i).getKor() + listhard.get(i).getEng());
 		}
 		System.out.println("//");
-		for (int i = 0; i < listnomal.size(); i++) {
-			System.out.println(listnomal.get(i).getKor() + listnomal.get(i).getEng());
-		}
-		System.out.println("//");
-		for (int i = 0; i < listeasy.size(); i++) {
-			System.out.println(listeasy.get(i).getKor() + listeasy.get(i).getEng());
-		}
+//		for (int i = 0; i < listnomal.size(); i++) {
+//			System.out.println(listnomal.get(i).getKor() + listnomal.get(i).getEng());
+//		}
+//		System.out.println("//");
+//		for (int i = 0; i < listeasy.size(); i++) {
+//			System.out.println(listeasy.get(i).getKor() + listeasy.get(i).getEng());
+//		}
 			
 		int ac = rd.nextInt(99)+1;
 		int ca = 0;
 		String re = ""; 
-		
+		System.out.println("문제");
 		System.out.println(listhard.get(ac).getKor());
+		System.out.println(listhard.get(ac).getEng());
+		System.out.print("답 : ");
 		re = sc.next();
-		if(listhard.get(ac).getEng() == re) {
+		if(re.equals(listhard.get(ac).getEng())) {
 			ca+=3;
 			System.out.println("정답 + 3점");
 		}else {

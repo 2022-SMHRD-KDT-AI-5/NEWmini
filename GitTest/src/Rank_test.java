@@ -88,7 +88,7 @@ public class Rank_test {
 		int hint_index = len-1;
 		String re = "";
 		int mo = 10;
-		System.out.println("최초 실행시 점수 = 100", );
+		System.out.println("최초 실행시 점수 = 100" );
 		while (true) {
 			if(mo==0) {
 				break;

@@ -91,6 +91,7 @@ public class Rank_test {
 		System.out.println("최초 실행시 점수 = 100" );
 		while (true) {
 			if(mo==0) {
+				asd
 				break;
 			}
 			System.out.println();

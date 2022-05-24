@@ -38,9 +38,9 @@ public class ArryMini {
 			rs = psmt.executeQuery();
 			while(rs.next()) { //데이터베이스형식과 java 형식이 다름.
 				index = 1; 	//1부터 시작
-				String eng = rs.getString(index++);
 				String kor = rs.getString(index++);
-				list.add(new Answer(eng, kor));
+				String eng = rs.getString(index++);
+				list.add(new Answer(kor, eng));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

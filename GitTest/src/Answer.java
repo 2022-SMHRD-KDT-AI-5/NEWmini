@@ -2,7 +2,7 @@
 public class Answer {
 	private String kor,eng;
 
-	public Answer(String kor, String eng) {
+	public Answer(String eng, String kor) {
 	this.eng= eng;
 	this.kor= kor;
 }

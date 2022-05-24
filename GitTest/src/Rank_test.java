@@ -42,7 +42,7 @@ public class Rank_test {
 				String eng = rs.getString(index++);
 				listhard.add(new Answer(kor, eng));
 			}
-		}catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		try {
@@ -55,7 +55,7 @@ public class Rank_test {
 				String eng = rs.getString(index++);
 				listeasy.add(new Answer(kor, eng));
 			}
-		}catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		try {
@@ -68,68 +68,109 @@ public class Rank_test {
 				String eng = rs.getString(index++);
 				listnomal.add(new Answer(kor, eng));
 			}
-		}catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			mc.close();
 		}
 		for (int i = 0; i < listhard.size(); i++) {
 			System.out.println(listhard.get(i).getKor() + listhard.get(i).getEng());
 		}
 		System.out.println("//");
-//		for (int i = 0; i < listnomal.size(); i++) {
-//			System.out.println(listnomal.get(i).getKor() + listnomal.get(i).getEng());
-//		}
-//		System.out.println("//");
-//		for (int i = 0; i < listeasy.size(); i++) {
-//			System.out.println(listeasy.get(i).getKor() + listeasy.get(i).getEng());
-//		}
-		int ac = rd.nextInt(99)+1;
+		
+		int ac = rd.nextInt(99) + 1;
 		int ca = 0;
 		int bb = 0;
 		int cc = 0;
-		String re = ""; 
-		System.out.println("문제 출력 ↓");
-		System.out.println(listhard.get(ac).getKor());
-		System.out.println(listhard.get(ac).getEng());
-		System.out.println("정답 입력 ↓");
-		for (int i = 0; i < listhard.get(ac).getEng().length(); i++) {
-			System.out.print("*");
-		}
-		System.out.println();
-		re = sc.next();
-		if(re.equals(listhard.get(ac).getEng())) {
-			ca+=3;
-			System.out.println("정답 + 3점");
-		}else {
-			System.out.println("힌트를 사용 하시겠습니까?");
-			System.out.println("힌트를 사용하시게 되면 1점찍 감소하게 됩니다.");
-			System.out.println("[1] 힌트를 사용한다  [2] 문제를 다시 도전하겠다.  [3] 다음으로 넘어가겠다.");
-			bb = sc.nextInt();
-			switch(bb) {
-			case 1 : {
-				switch(cc) {
-				
-				}
-				
-				System.out.print(listhard.get(ac).getEng().charAt(0));
-				for (int i = 1; i < listhard.get(ac).getEng().length(); i++) {
-					System.out.print("*");
-				}
-				System.out.println(listhard.get(ac).getEng().charAt(listhard.get(ac).getEng().length()-1));
+		int dd = 1;
+		int ee = 0;
+        int len = listhard.get(ac).getEng().length();
+		int hint_index = len-1;
+		String re = "";
+		int mo = 10;
+		while (true) {
+			if(mo==0) {
+				break;
 			}
+			System.out.println();
+			System.out.println("문제 출력 ↓");
+			System.out.println(listhard.get(ac).getKor());
+			System.out.println("정답 수 ↓");
+			for (int i = 0; i < listhard.get(ac).getEng().length(); i++) {
+				System.out.print("*");
 			}
-		}
-		System.out.println("오답 + 0점");
-		System.out.println(ca);
-		
-		
-		
-		
-		
-		
-	
+			System.out.println();
+			System.out.println("정답 입력 ↓");
+			System.out.println();
+			re = sc.next();
+			if (re.equals(listhard.get(ac).getEng())) {
+				ca += 3;
+				System.out.println("정답 + 3점");
+				ac = rd.nextInt(99) + 1;
+		        len = listhard.get(ac).getEng().length();
+				hint_index = len-1;
+				System.out.println("점수" + ca);
+			} else {
+				System.out.println("오답 입니다.");
+				mo-=1;
+				System.out.println();
+					System.out.println("힌트를 사용 하시겠습니까?");
+					System.out.println("힌트를 사용하시게 되면 1점찍 감소하게 됩니다.");
+					System.out.println("[1] 힌트를 사용한다  [2] 문제를 다시 도전하겠다.  [3] 다음으로 넘어가겠다.");
+					bb = sc.nextInt();
+					if(bb == 1) {
+						System.out.println("사용할 힌트를 선택해주세요");
+						System.out.println("[1] 첫글자를 보겠다.  [2] 마지막글자를 보겠다. [3] 정답 다시입력.");
+						cc = sc.nextInt();
+						if(cc == 1) {
+							System.out.println("첫글자를 확인합니다.");
+							for (int i = 0; i <= ee; i++) {
+								System.out.print(listhard.get(ac).getEng().charAt(i));
+							}
+							System.out.println();
+							ee += 1;
+							ca -= 1;
+							System.out.println("점수" + ca);
+						}else if(cc == 2) {
+							System.out.println("마지막 글자를 확인합니다.");
+							String[] split_letter = listhard.get(ac).getEng().split("");
+							for (int i=0; i<len; i++) {
+								if(i < hint_index) System.out.print(" ");
+								else System.out.print(split_letter[i]);
+							}
+							if (hint_index > 0) {
+								hint_index -= 1;
+							}
+							ca-=1;
+							System.out.println();
+							System.out.println("점수" + ca);
+						}else if(cc == 3) {
+							System.out.println("정답 다시 입력.");
+							System.out.println("문제 출력 ↓");
+							System.out.println(listhard.get(ac).getKor());
+							System.out.println("정답 입력 ↓");
+							System.out.println();
+							re = sc.next();
+						}else{
+							System.out.println("잘못 입력했습니다.");
+							System.out.println("이전단계로 돌아갑니다.");
+						}
+					}else if (bb==2) {
+						System.out.println("다시 도전");
+					}
+					else if (bb==3) {
+						ac = rd.nextInt(99)+1;
+						len = listhard.get(ac).getEng().length();
+						hint_index = len-1;
+						System.out.println("점수" + ca);
+					}else {
+						System.out.println("잘못");
+					}
+				}
+			}
+
+
+
 	}
 
-	
 }

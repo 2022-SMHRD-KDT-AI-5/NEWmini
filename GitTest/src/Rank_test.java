@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-asd
+
 public class Rank_test {
 
 	public static void main(String[] args) {

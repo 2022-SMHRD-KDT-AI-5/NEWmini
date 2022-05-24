@@ -13,11 +13,26 @@ public class ArryMini {
 		PreparedStatement psmt = null;
 		Connection conn = null;
 		ResultSet rs = null;
-		Minicontroller mc = new Minicontroller();
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+			String user = "cgi_7_0516_5";
+			String password = "smhrd5";
+			conn = DriverManager.getConnection(url,user,password);
+			System.out.println("DB connect");
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Minicontroller mc = new Minicontroller(conn);
 		int index = 1;
 		
 		try {
-			mc.connect();
 			String sql = ("select * from hard");
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -35,7 +50,7 @@ public class ArryMini {
 		
 		
 		for(Answer model : list) {
-			System.out.println("영어: "+model.getEng() +"한글: "+model.getKor());
+			System.out.println(model.getEng() +model.getKor());
 		}
 
 	

@@ -10,6 +10,10 @@ public class Minicontroller {
 	ResultSet rs = null;
 	int row = 0;
 	
+	public Minicontroller(Connection conn) {
+		this.conn = conn;
+	}
+	
 	public void connect() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");

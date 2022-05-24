@@ -4,10 +4,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
 
-public class ArryMini {
+public class Rank_ extends ArryMini{
 
 	public static void main(String[] args) {
+
+
 
 		ArrayList<Answer> listhard = new ArrayList<Answer>();
 		ArrayList<Answer> listeasy = new ArrayList<Answer>();
@@ -15,7 +19,12 @@ public class ArryMini {
 		PreparedStatement psmt = null;
 		Connection conn = null;
 		ResultSet rs = null;
-
+		Random rd = new Random();
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
@@ -83,6 +92,27 @@ public class ArryMini {
 		for (int i = 0; i < listeasy.size(); i++) {
 			System.out.println(listeasy.get(i).getKor() + listeasy.get(i).getEng());
 		}
+			
+		int ac = rd.nextInt(99)+1;
+		int ca = 0;
+		String re = ""; 
+		
+		System.out.println(listhard.get(ac).getKor());
+		re = sc.next();
+		if(listhard.get(ac).getEng() == re) {
+			ca+=3;
+			System.out.println("정답 + 3점");
+		}else {
+			System.out.println("오답 + 0점");
+		}
+		
+		
+		System.out.println(ca);
+		
+		
+		
+		
+		
 	}
 
 }

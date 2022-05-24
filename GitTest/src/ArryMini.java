@@ -84,5 +84,6 @@ public class ArryMini {
 			System.out.println(listeasy.get(i).getKor() + listeasy.get(i).getEng());
 		}
 	}
+	
 
 }

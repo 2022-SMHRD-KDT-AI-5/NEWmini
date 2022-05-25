@@ -450,6 +450,7 @@ public class Rank_test {
 							hint_index = len - 1;
 							System.out.println("점수" + score);
 							System.out.println("기회" + Life);
+							
 						} else {
 
 							System.out.println("⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿   ⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿   ⠀⠀     ⠀ ⠀⠀⠀⠠⣤⡀");
@@ -1303,7 +1304,7 @@ public class Rank_test {
 						System.out.println("문제 출력 ↓");
 						System.out.println(listhard.get(Random).getKor());
 						System.out.println("정답 수 ↓");
-						for (int i = 1; i < listhard.get(Random).getEng().length(); i++) {
+						for (int i = 1; i <= listhard.get(Random).getEng().length(); i++) {
 							System.out.print("□");
 						}
 						System.out.println();

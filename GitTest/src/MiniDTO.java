@@ -50,7 +50,6 @@ public class MiniDTO {
 	
 }
 
-<<<<<<< HEAD
 class Game extends MiniDTO{
 	
 	public Game(String kor, String eng) {
@@ -58,6 +57,4 @@ class Game extends MiniDTO{
 	}
 	
 }
-=======
 
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-AI-5/NEWmini.git
